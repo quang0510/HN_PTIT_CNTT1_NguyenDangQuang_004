@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",          
+    "module": "commonjs",          
+    "strict": true,          
+    "outDir": "./dist",   
+    "moduleResolution": "node",  
+    "skipLibCheck": true,     
+    "forceConsistentCasingInFileNames": true 
+  },
+  "include": ["./src"],
+}
