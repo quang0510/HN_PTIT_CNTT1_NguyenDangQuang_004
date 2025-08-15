@@ -159,10 +159,7 @@ class PetShop {
     }
 
     calculateTotalRevenue(): number{
-    let sum = 0;
-
-  
-      return sum;
+        return this.sales.reduce((sum, sale) => sum + sale.totalPrice, 0);
 
     }
 
@@ -284,7 +281,8 @@ do {
             petShop.listCustomerPurchases(id6);
             break;
         case 7:
-
+            const revenue = petShop.calculateTotalRevenue();
+            console.log(` Tổng doanh thu: ${revenue.toLocaleString("vi-VN")}₫`);
             break;
         case 8:
     
@@ -302,4 +300,5 @@ do {
             console.log(` Lựa chọn không hợp lệ , vui lòng chọn lại`);
     }
 } while (choice !== 11);
+
 
