@@ -1,5 +1,5 @@
 "use strict";
-class Customer {
+class Customer { 
     constructor(id, name, email, phone) {
         this.id = id;
         this.name = name;
@@ -154,6 +154,7 @@ do {
                 3. BIRD\n
                 4. Thoat\n
                 Chọn loại bạn muốn:
+
                 `));
                 switch (choice2) {
                     case 1:
