@@ -163,9 +163,19 @@ class PetShop {
 
     }
 
-    getPetTypeCount(): void{
+   getPetTypeCount(): void {
+    const petCount = new Map<string, number>();
 
-    }
+    this.pets.forEach(pet => {
+        petCount.set(pet.type, (petCount.get(pet.type) || 0) + 1);
+    });
+
+    console.log("Số lượng từng loại thú:");
+    petCount.forEach((count, type) => {
+        console.log(`${type}: ${count}`);
+    });
+}
+
 
     getPetCareInstructions(petId: number): void{
 
@@ -285,7 +295,7 @@ do {
             console.log(` Tổng doanh thu: ${revenue.toLocaleString("vi-VN")}₫`);
             break;
         case 8:
-    
+            petShop.getPetTypeCount();
             break;
         case 9:
     
@@ -300,5 +310,6 @@ do {
             console.log(` Lựa chọn không hợp lệ , vui lòng chọn lại`);
     }
 } while (choice !== 11);
+
 
 
