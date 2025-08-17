@@ -32,7 +32,7 @@ abstract class Pet {
         this.id = id;
         this.type = type;
         this.price = price;
-        this.isAvailable = true;
+        this.isAvailable = isAvailable;
     }
 
     sell(): void{
@@ -135,7 +135,7 @@ class PetShop {
 
     sellPet(customerId: number, petId: number, quantity: number): Sale | null {
 
-        const index = this.pets.findIndex((ele) =>ele.id === customerId);
+        const index = this.pets.findIndex((ele) => ele.id === petId);
 
         if (index !== -1) {
         this.pets.splice(index, 1);
@@ -240,11 +240,10 @@ do {
                 `))
                 switch (choice2) {
                     case 1:
-                        const idDog =Number( prompt(` nhap id:`));
                         const typeDog = prompt(`Nhap loai :`);
                         const priceDog = Number(prompt(`nhap gia tien:`));
                         const availableDog = true;
-                        petShop.addPet(idDog , typeDog , priceDog , availableDog);
+                        petShop.addPet(typeDog , priceDog , availableDog);
 
                         break;
                     case 2:
@@ -310,6 +309,7 @@ do {
             console.log(` Lựa chọn không hợp lệ , vui lòng chọn lại`);
     }
 } while (choice !== 11);
+
 
 
 
